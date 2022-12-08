@@ -13,8 +13,9 @@ import {FaGoogle} from 'react-icons/fa'
 
 import {useAuth} from "../Common/AuthContext";
 import {Link} from "react-router-dom";
-import {Button} from "@mui/material";
+import {Button, TextField} from "@mui/material";
 import {AiFillGithub} from "react-icons/ai";
+import {BsArrowRight} from "react-icons/bs";
 
 export default function RegisterPage() {
 
@@ -34,9 +35,10 @@ export default function RegisterPage() {
 
     return <div className={"card"}>
 
-
         <img src={"https://www.moonstride.com/wp-content/uploads/2020/11/spaceship-footer.svg"}
              className={"rocket-img"} alt={""}/>
+        <h3>Welcome to Bardeen</h3>
+        <p>Let's log in to launch your automations</p>
         <chakra.form
             onSubmit={async e => {
                 e.preventDefault()
@@ -68,47 +70,76 @@ export default function RegisterPage() {
                     })
             }}
         >
-            <Stack spacing='6'>
+
                 <FormControl id='email'>
-                    <FormLabel>Email address</FormLabel>
-                    <Input
+
+                    <TextField
+                        size="small"
+                        margin="dense"
+                        label="Email Address"
+                        fullWidth
+                        variant={"outlined"}
                         name='email'
                         type='email'
-                        autoComplete='email'
                         required
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
                 </FormControl>
-                <FormControl id='password'>
-                    <FormLabel>Password</FormLabel>
-                    <Input
-                        name='password'
-                        type='password'
-                        autoComplete='password'
-                        required
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                    />
-                </FormControl>
+            <FormControl id='password'>
+
+                <TextField
+                    className={"password"}
+                    size="small"
+                    margin="dense"
+                    label="Password"
+                    fullWidth
+                    variant={"outlined"}
+                    name='password'
+                    type='password'
+
+                    value={password}
+                    required
+                    onChange={e => setPassword(e.target.value)}
+                />
+            </FormControl>
+            <div className={"link-wrapper"}>
+                <Link to={"/register"}>   Login</Link>
+                <Link to='/forgot-password'>Forgot password?</Link>
+
+            </div>
                 <Button
+                    sx={{marginBottom:"10px",
+                        marginTop:"10px",
+                        backgroundColor:"#7600D8",
+                        textTransform:"none"
+                    }}
+                    fullWidth
+                    variant={"contained"}
                     type='submit'
 
                     isLoading={isSubmitting}
                 >
                     Sign up
                 </Button>
-            </Stack>
+
         </chakra.form>
-        <Center my={4}>
-            <Link to={"/"}>
-                Login
-            </Link>
-        </Center>
-
         <Button
-
-            startIcon={<FaGoogle/>}
+            sx={{
+                marginBottom:"10px",
+                marginTop:"10px",
+                border:"1px solid black",
+                color:"black",
+                textTransform:"none",
+                // justifyContent:"space-around"
+            }}
+            fullWidth
+            variant={"outlined"}
+            startIcon={<img
+                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/800px-Google_%22G%22_Logo.svg.png"}
+                width={15}
+                alt={"google"}/>}
+            endIcon={<BsArrowRight />}
             onClick={() =>
                 signInWithGoogle()
                     .then(user => console.log(user))
@@ -120,9 +151,17 @@ export default function RegisterPage() {
 
 
         <Button
+            sx={{
+                marginBottom:"20px",
+                color:"black",
+                textTransform:"none",
+                border:"1px solid black",
 
+            }}
+            fullWidth
+            variant={"outlined"}
             startIcon={<AiFillGithub/>}
-
+            endIcon={<BsArrowRight />}
         >
             Sign in with Github
         </Button>

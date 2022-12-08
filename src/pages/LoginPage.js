@@ -112,7 +112,7 @@ export default function LoginPage() {
                 }}
                 fullWidth
                 variant={"contained"}
-                color={"secondary"}
+
                 isLoading={isSubmitting}
             >
                 Sign in

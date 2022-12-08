@@ -45,11 +45,7 @@
     font-size: 14px;
     display: flex;
 
-    a{
-      text-decoration: none;
-      text-transform: none;
-      color: #7600D8!important;
-    }
+
   }
   .password{
 
@@ -58,4 +54,9 @@
 
 .rocket-img {
   width: 230px;
+}
+a{
+  text-decoration: none;
+  text-transform: none;
+  color: #7600D8!important;
 }
