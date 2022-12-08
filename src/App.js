@@ -1,5 +1,5 @@
 
-import './App.css';
+import './App.scss';
 import AuthContextProvider from "./Common/AuthContext";
 import AppRouter from "./components/AppRouter";
 

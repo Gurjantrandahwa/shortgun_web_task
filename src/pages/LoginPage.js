@@ -1,20 +1,17 @@
 import {
-    Button,
+
     chakra,
     FormControl,
-    FormLabel,
-
-    HStack,
-    Input,
-
     useToast,
 } from '@chakra-ui/react'
 import React, {useState} from 'react'
-import {FaGoogle} from 'react-icons/fa'
 import {Link, useLocation} from 'react-router-dom'
 import {useAuth} from "../Common/AuthContext";
 import useMounted from "../Common/useMounted";
 import {useNavigate} from "react-router-dom"
+import {AiFillGithub} from "react-icons/ai";
+import {Button, TextField} from "@mui/material";
+import {BsArrowRight} from "react-icons/bs";
 
 export default function LoginPage() {
     const {signInWithGoogle, login} = useAuth()
@@ -33,10 +30,10 @@ export default function LoginPage() {
     }
 
     return <div className={"card"}>
-
-
         <img src={"https://www.moonstride.com/wp-content/uploads/2020/11/spaceship-footer.svg"}
              className={"rocket-img"} alt={""}/>
+        <h3>Welcome to Bardeen</h3>
+        <p>Let's log in to launch your automations</p>
         <chakra.form
             onSubmit={async e => {
                 e.preventDefault()
@@ -71,46 +68,74 @@ export default function LoginPage() {
         >
 
             <FormControl id='email'>
-                <FormLabel>Email address</FormLabel>
-                <Input
+
+                <TextField
+                    size="small"
+                    margin="dense"
+                    label="Email Address"
+                    fullWidth
+                    variant={"outlined"}
                     name='email'
                     type='email'
-                    autoComplete='email'
                     required
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
             </FormControl>
             <FormControl id='password'>
-                <FormLabel>Password</FormLabel>
-                <Input
+
+                <TextField
+                    className={"password"}
+                    size="small"
+                    margin="dense"
+                    label="Password"
+                    fullWidth
+                    variant={"outlined"}
                     name='password'
                     type='password'
-                    autoComplete='password'
+
                     value={password}
                     required
                     onChange={e => setPassword(e.target.value)}
                 />
             </FormControl>
-            {/* <PasswordField /> */}
-            <Button
+            <div className={"link-wrapper"}>
+                <Link to={"/register"}> Create Account</Link>
+                <Link to='/forgot-password'>Forgot password?</Link>
 
+            </div>
+            <Button
+                sx={{marginBottom:"10px",
+                    marginTop:"10px",
+                    backgroundColor:"#7600D8",
+                    textTransform:"none"
+                }}
+                fullWidth
+                variant={"contained"}
+                color={"secondary"}
                 isLoading={isSubmitting}
             >
                 Sign in
             </Button>
 
         </chakra.form>
-        <HStack justifyContent='space-between'>
-            <Link to={"/register"}> Create Account</Link>
-            <Link to='/forgot-password'>Forgot password?</Link>
-
-        </HStack>
 
         <Button
-
-            leftIcon={<img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/800px-Google_%22G%22_Logo.svg.png"}
-            width={15}/>}
+            sx={{
+                marginBottom:"10px",
+                marginTop:"10px",
+                border:"1px solid black",
+                color:"black",
+                textTransform:"none",
+                // justifyContent:"space-around"
+            }}
+            fullWidth
+            variant={"outlined"}
+            startIcon={<img
+                src={"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/800px-Google_%22G%22_Logo.svg.png"}
+                width={15}
+                alt={"google"}/>}
+            endIcon={<BsArrowRight />}
             onClick={() =>
                 signInWithGoogle()
                     .then(user => {
@@ -124,11 +149,17 @@ export default function LoginPage() {
         </Button>
 
         <Button
+            sx={{
+                marginBottom:"20px",
+                color:"black",
+                textTransform:"none",
+                border:"1px solid black",
 
-            leftIcon={<img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/800px-Google_%22G%22_Logo.svg.png"}
-                           width={15}
-            alt={"google"}/>}
-
+            }}
+            fullWidth
+            variant={"outlined"}
+            startIcon={<AiFillGithub/>}
+            endIcon={<BsArrowRight />}
         >
             Sign in with Github
         </Button>

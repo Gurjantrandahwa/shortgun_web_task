@@ -13,10 +13,10 @@ import React, { useState } from 'react'
 
 import {useAuth} from "../Common/AuthContext";
 
-import {useNavigate} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 export default function ForgotPasswordPage() {
-  const navigate = useNavigate();
+
   const { forgotPassword } = useAuth()
   const toast = useToast()
 
@@ -68,9 +68,9 @@ export default function ForgotPasswordPage() {
         </chakra.form>
 
         <Center>
-          <Button variant='link' onClick={() => navigate.push('/login')}>
+          <Link to={"/"}>
             Login
-          </Button>
+          </Link>
         </Center>
 
 

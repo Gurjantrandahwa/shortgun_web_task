@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  background-color: #7600D8;
+  height: 110vh;
+  padding-top: 80px;
+}
+
+.card {
+  font-family: sans-serif;
+  width: 330px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: auto;
+  justify-content: center;
+  height: 90vh;
+  border-radius: 20px;
+
+  h3 {
+    color: #7600D8;
+    margin-bottom: 5px;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: gray;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .link-wrapper {
+
+    justify-content: space-between;
+    margin: 10px;
+    font-size: 14px;
+    display: flex;
+
+    a{
+      text-decoration: none;
+      text-transform: none;
+      color: #7600D8!important;
+    }
+  }
+  .password{
+
+  }
+}
+
+.rocket-img {
+  width: 230px;
+}
