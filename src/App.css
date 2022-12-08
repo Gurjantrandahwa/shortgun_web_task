@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    background-color: #623d8f;
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+    justify-content: center;
+}
+
+.rocket-img {
+    width: 160px;
+}
