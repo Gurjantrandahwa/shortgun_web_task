@@ -7,7 +7,7 @@
 .app {
   background-color: #7600D8;
   height: 110vh;
-  padding-top: 80px;
+padding-top: 50px;
 }
 
 .card {
@@ -20,7 +20,7 @@
   padding: 20px;
   margin: auto;
   justify-content: center;
-  height: 90vh;
+  min-height: 90%;
   border-radius: 20px;
 
   h3 {
@@ -47,9 +47,7 @@
 
 
   }
-  .password{
 
-  }
 }
 
 .rocket-img {
