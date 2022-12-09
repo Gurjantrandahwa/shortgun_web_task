@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Montserrat:wght@300&display=swap');
+.header {
+position: fixed;
+  top: 0;
+  z-index: 1;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+  width: 100%;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+
+  .logo {
+    width: 128px;
+    height: 44px;
+  }
+
+  .input-wrapper {
+    height: 34px;
+    border-radius: 18px;
+    padding: 0 10px 0 15px;
+    width: 360px;
+    font-size: 0.75rem;
+    font-weight: 300;
+    border: solid 1px #C35516;
+    display: flex;
+    align-items: center;
+
+
+    input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 5px 0;
+    }
+
+    ::placeholder {
+      color: black;
+
+    }
+
+    svg {
+      color: var(--orange);
+      font-size: 22px;
+      cursor: pointer;
+
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+
+    .currency {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      padding-right: 5px;
+
+      img {
+        max-width: 128px;
+      }
+
+      p {
+        color: var(--green);
+        font-size: 0.6875rem;
+        font-weight: 550;
+      }
+    }
+
+    .trading-date {
+      border-left: 1px solid grey;
+      font-size: 12px;
+      color: var(--gray);
+      padding-left: 5px;
+
+      svg {
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        color: white;
+        background-color: #C35516;
+        font-size: 16px;
+        border-radius: 50%;
+
+      }
+
+    }
+  }
+}
+
+.box {
+  background-color: #f8f9fa;
+  border: 1px solid #e3e3e3;
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  gap: 70px;
+  margin-left: 30px;
+
+
+  ul {
+    list-style: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 16px;
+  }
+  li{
+    cursor: pointer;
+  }
+  .active{
+    color: #C35516;
+  }
+}
