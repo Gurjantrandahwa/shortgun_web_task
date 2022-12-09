@@ -2,6 +2,7 @@ import React from 'react';
 import {useUserAuth} from "../Common/UserAuthContext";
 import Header from "../components/Header/Header";
 
+
 export default function Homepage() {
 
     const {user} = useUserAuth();
@@ -13,5 +14,6 @@ export default function Homepage() {
         .then(data => console.log(data));
     return <div>
         <Header/>
+
     </div>
 }

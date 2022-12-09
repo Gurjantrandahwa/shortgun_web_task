@@ -4,6 +4,7 @@ import {useUserAuth} from "../../Common/UserAuthContext";
 import {Button} from "@mui/material";
 import {CgPlayPause} from "react-icons/cg";
 import {BiSearch} from "react-icons/bi";
+import Nifty from "../Nifty/Nifty";
 
 export default function Header() {
     const [selected, setSelected] = useState(0)
@@ -39,13 +40,7 @@ export default function Header() {
                     <CgPlayPause/>
                 </div>
             </div>
-            <Button variant={"contained"}
-                    sx={{position: "absolute", bottom: "10px"}}
-                    size={"small"}
-                    color={"secondary"}
-                    onClick={handleLogOut}>
-                log out
-            </Button>
+
         </div>
         <div className={"box"}>
             <div className={"navbar"}>
@@ -90,10 +85,15 @@ export default function Header() {
                     })
                 }
             </div>
+            <Button variant={"contained"}
+                    sx={{position: "absolute", left:"20px",marginTop:"20px"}}
+                    size={"small"}
+                    color={"secondary"}
+                    onClick={handleLogOut}>
+                log out
+            </Button>
         </div>
-
-
-
+        <Nifty/>
     </div>
 
 }
