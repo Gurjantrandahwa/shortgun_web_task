@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Montserrat:wght@300&display=swap');
 
 .header {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  transition-timing-function: ease-in;
-  transition: all 0.5s;
+
+  position: relative;
+
+
   width: 100%;
-
-
+  background-color: white;
 }
 
 .logo-wrapper {
@@ -41,6 +38,8 @@
       font-weight: 600;
       font-size: 13px;
       padding: 5px 0;
+
+
     }
 
     ::placeholder {
@@ -102,20 +101,21 @@
   background-color: #f8f9fa;
   border: 1px solid #e3e3e3;
   padding: 10px;
+  box-shadow: 0 6px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
   display: flex;
-  gap: 70px;
-  margin-left: 30px;
-
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
 
   ul {
     list-style: none;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
+font-weight: 500;
 
-    font-size: 16px;
   }
 
   li {
@@ -124,5 +124,6 @@
 
   .active {
     color: #C35516;
+    font-weight: 600;
   }
 }

@@ -4,7 +4,7 @@ import {useUserAuth} from "../../Common/UserAuthContext";
 import {Button} from "@mui/material";
 import {CgPlayPause} from "react-icons/cg";
 import {BiSearch} from "react-icons/bi";
-import Nifty from "../Nifty/Nifty";
+
 
 export default function Header() {
     const [selected, setSelected] = useState(0)
@@ -86,14 +86,14 @@ export default function Header() {
                 }
             </div>
             <Button variant={"contained"}
-                    sx={{position: "absolute", left:"20px",marginTop:"20px"}}
+                    sx={{position: "absolute", left:"220px",top:"30px"}}
                     size={"small"}
                     color={"secondary"}
                     onClick={handleLogOut}>
                 log out
             </Button>
         </div>
-        <Nifty/>
+
     </div>
 
 }
