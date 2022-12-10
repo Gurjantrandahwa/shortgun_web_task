@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import {Box, Tab, Tabs} from "@mui/material";
-import {green} from "@mui/material/colors";
+import "./stockTable.scss";
 
 function createData(name, calories, fat, carbs) {
     return {name, calories, fat, carbs};
@@ -34,7 +34,7 @@ export default function StockTable() {
     }));
 
     const StyledTableRow = styled(TableRow)(({ theme }) => ({
-        '&:nth-of-type(odd)': {
+        '&:nth-of-type(even)': {
             backgroundColor: theme.palette.action.hover,
         },
 
@@ -62,7 +62,7 @@ export default function StockTable() {
             <Table sx={{ maxWidth: 450 }} aria-label="customized table">
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell>Symbol</StyledTableCell>
+                        <StyledTableCell>SYMBOL</StyledTableCell>
                         <StyledTableCell align="right">LTD</StyledTableCell>
                         <StyledTableCell align="right">%CHNG</StyledTableCell>
                         <StyledTableCell align="right">VOLUME</StyledTableCell>
