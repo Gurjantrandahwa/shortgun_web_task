@@ -1,37 +1,48 @@
 .nifty-wrapper {
   display: flex;
-  padding: 15px 10px 45px 10px;
+
   background: #E8E8E8;
   border: none !important;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 30px;
+  justify-content: space-evenly;
 
+  margin-top: 30px;
+  padding: 10px;
 }
 
 .single-nifty {
-  display: flex;
-  align-items: center;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  color: var(--gray-dark);
-  font-size: 17px;
-  .single-nifty-name{
+  color: #5c5c5c;
+  cursor: pointer;
+
+  .single-nifty-name {
     display: flex;
-    flex-direction: column;
-    text-align: left;
-    justify-content: left;
-
-    .name{
-
-    }
-    .percent{
-      color: var(--red);
-    }
   }
-  svg{
-    color: var(--red);
-    font-size: 22px;
+}
+
+.percent {
+  color: var(--red);
+}
+
+.svg {
+  color: #c35516;
+  font-size: 22px;
+}
+
+.single-nifty-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  color: #5c5c5c;
+  background-color: white;
+  border-radius: 10px;
+  transition: 0.1s ease-in-out;
+  box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  width: 200px;
+  cursor: pointer;
+  svg {
+    font-size: 27px;
   }
 }

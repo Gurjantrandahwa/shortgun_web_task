@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import {BsCaretDownFill} from "react-icons/bs";
 import "./Nifty.scss";
 
 export default function Nifty() {
+    const [selected, setSelected] = useState(0)
     return <div className={"nifty-wrapper"}>
 
         {
@@ -38,15 +39,20 @@ export default function Nifty() {
                     percent: "-1125(-0.61%)"
                 },
             ].map(((value, index) => {
-                return <div key={index} className={"single-nifty"}>
+                return <div  className={selected === index ? "single-nifty-active" : "single-nifty"}
+                             onClick={() => setSelected(index)} key={index}>
                     <div className={"single-nifty-name"}>
-                        <p className={"name"}>{value.name}</p>
-                        <p className={"volume"}>{value.volume}</p>
-                        <p className={"percent"}>{value.percent}</p>
+                        <div>
+                            <p>{value.name}</p>
+                            <p className={"volume"}>{value.volume}</p>
+                            <p className={"percent"}>{value.percent}</p>
+                        </div>
+
+                        <div className={"svg"}>
+                            {value.icon}
+                        </div>
                     </div>
-                    <div>
-                        {value.icon}
-                    </div>
+
                 </div>
             }))
         }
