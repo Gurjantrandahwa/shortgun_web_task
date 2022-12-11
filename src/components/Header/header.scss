@@ -1,11 +1,11 @@
 
 .header {
 
-  position: relative;
-
-
+  position: fixed;
   width: 100%;
   background-color: white;
+  top: 0;
+  left: 0;
 }
 
 .logo-wrapper {
@@ -102,6 +102,7 @@
   border: 1px solid #e3e3e3;
   padding: 10px;
   box-shadow: 0 6px 15px -3px rgba(0, 0, 0, 0.1);
+
 }
 
 .navbar {
@@ -114,7 +115,7 @@
     list-style: none;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-font-weight: 500;
+    font-weight: 500;
 
   }
 

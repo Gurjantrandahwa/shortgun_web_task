@@ -93,7 +93,6 @@ export default function Header() {
                 log out
             </Button>
         </div>
-
     </div>
 
 }
