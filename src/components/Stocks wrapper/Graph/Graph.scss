@@ -1,5 +1,6 @@
 .graph-container{
   max-width: 60%;
+
 }
 
 .data-wrapper{
@@ -18,5 +19,5 @@ h3{
 
 .graph{
 border: 1px solid var(--gray-dark);
-
+  place-items: center;
 }
